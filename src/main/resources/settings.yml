@@ -1,0 +1,23 @@
+
+debug: false
+data_storage:
+  # mysql | sqlite
+  use_type: sqlite
+  mysql:
+    host: '127.0.0.1'
+    port: 3306
+    database: 'test'
+    username: 'root'
+    password: '12345678'
+    params: '?autoReconnect=true&useSSL=false'
+  hikari_settings:
+    maximum_pool_size: 10
+    minimum_idle: 10
+    maximum_lifetime: 1800000
+    keepalive_time: 0
+    connection_timeout: 5000
+
+set:
+  # 清算倒计时(列如玩家主动放弃货币，则开始倒计时)
+  # 默认 15 天
+  clearingTime: 15d
